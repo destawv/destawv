@@ -1,0 +1,12 @@
+{
+  "name": "biodata-desta",
+  "version": "1.0.0",
+  "description": "Biodata Desta Wijaya Viransyah",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Desta Wijaya Viransyah",
+  "license": "ISC"
+}
