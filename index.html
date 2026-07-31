@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biodata — Desta Wijaya Viransyah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f6f1e4;
+    --paper-2: #efe8d6;
+    --ink: #2c2620;
+    --ink-soft: #5a5145;
+    --pencil-blue: #4f6a9e;
+    --marker-orange: #f0782e;
+    --highlight-yellow: #ffd84d;
+    --line: #cbbfa0;
+    --sticker-pink: #e8a7a0;
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--paper-2);
+    color:var(--ink);
+    font-family:'Poppins', sans-serif;
+    overflow-x:hidden;
+  }
+
+  body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 16px;
+  }
+
+  .binder{
+    position:relative;
+    width:100%;
+    max-width:880px;
+  }
+
+  .page{
+    position:relative;
+    background:
+      repeating-linear-gradient(
+        var(--paper) 0px, var(--paper) 35px,
+        var(--line) 35.5px, var(--paper) 36px
+      );
+    background-color:var(--paper);
+    border-radius:6px;
+    box-shadow:
+      0 1px 0 rgba(0,0,0,0.06),
+      0 20px 50px -20px rgba(44,38,32,0.35),
+      0 2px 8px rgba(44,38,32,0.12);
+    padding:56px 44px 44px 76px;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(14px);
+    animation:riseIn .7s ease forwards;
+  }
+
+  @keyframes riseIn{
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* spiral binding edge */
+  .page::before{
+    content:"";
+    position:absolute;
+    left:0; top:0; bottom:0;
+    width:34px;
+    background:repeating-linear-gradient(
+      to bottom,
+      transparent 0px, transparent 10px,
+      #d8cba8 10px, #d8cba8 13px,
+      transparent 13px, transparent 30px
+    );
+    border-right:1px dashed #c9bb95;
+  }
+  .page::after{
+    content:"";
+    position:absolute;
+    left:6px; top:0; bottom:0; width:2px;
+    background:repeating-linear-gradient(to bottom, #a9987090 0 6px, transparent 6px 24px);
+  }
+
+  header{
+    position:relative;
+    margin-bottom:30px;
+  }
+
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--line);
+  }
+
+  h1{
+    font-family:'Permanent Marker', cursive;
+    font-weight:400;
+    font-size:clamp(34px, 6vw, 54px);
+    line-height:1.05;
+    margin:10px 0 4px;
+    color:var(--ink);
+    transform:rotate(-1.2deg);
+    position:relative;
+    display:inline-block;
+  }
+
+  h1 .highlight{
+    position:relative;
+    z-index:1;
+  }
+  h1 .highlight::before{
+    content:"";
+    position:absolute;
+    left:-4px; right:-4px; bottom:2px;
+    height:14px;
+    background:var(--highlight-yellow);
+    z-index:-1;
+    opacity:.75;
+    transform:rotate(-.6deg);
+  }
+
+  .subtitle{
+    font-family:'Caveat', cursive;
+    font-size:24px;
+    color:var(--pencil-blue);
+    margin:2px 0 0;
+  }
+
+  .layout{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:34px;
+    align-items:start;
+  }
+
+  @media (max-width:620px){
+    .layout{grid-template-columns:1fr;}
+    .page{padding:48px 24px 36px 56px;}
+  }
+
+  /* Avatar sketch frame */
+  .frame-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+  }
+
+  .frame{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:var(--paper);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+
+  .frame svg{width:100%; height:100%;}
+
+  .tape{
+    position:absolute;
+    width:70px; height:26px;
+    background:rgba(255,216,77,.55);
+    border:1px solid rgba(240,120,46,.25);
+    top:-14px; left:50%;
+    transform:translateX(-50%) rotate(-3deg);
+    box-shadow:0 2px 4px rgba(0,0,0,.08);
+  }
+
+  .caption{
+    font-family:'Caveat', cursive;
+    font-size:19px;
+    color:var(--ink-soft);
+    text-align:center;
+    transform:rotate(-1deg);
+  }
+
+  .stickers{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:4px;
+  }
+  .sticker{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    padding:5px 10px;
+    border-radius:14px;
+    border:1.5px solid var(--ink);
+    background:var(--paper);
+    transform:rotate(-2deg);
+    white-space:nowrap;
+  }
+  .sticker:nth-child(2){transform:rotate(2deg); background:var(--highlight-yellow);}
+  .sticker:nth-child(3){transform:rotate(-1.5deg); background:var(--sticker-pink); color:#fff; border-color:#00000022;}
+
+  /* biodata list */
+  .fields{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .field{
+    display:grid;
+    grid-template-columns:118px 1fr;
+    gap:14px;
+    align-items:baseline;
+    border-bottom:1px dashed var(--line);
+    padding-bottom:10px;
+  }
+
+  .field .label{
+    font-family:'Space Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .field .value{
+    font-family:'Poppins', sans-serif;
+    font-weight:500;
+    font-size:16.5px;
+    color:var(--ink);
+  }
+
+  .field.hobi .value{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .icon{
+    width:18px; height:18px;
+    flex-shrink:0;
+  }
+
+  .note{
+    margin-top:26px;
+    position:relative;
+    background:var(--highlight-yellow);
+    padding:16px 18px 18px;
+    border-radius:2px;
+    transform:rotate(1.4deg);
+    box-shadow:0 8px 16px -8px rgba(44,38,32,0.35), 0 2px 3px rgba(0,0,0,.08);
+    max-width:420px;
+  }
+  .note::before{
+    content:"";
+    position:absolute;
+    top:-10px; left:24px;
+    width:52px; height:20px;
+    background:rgba(255,255,255,.55);
+    border:1px solid rgba(0,0,0,.05);
+    transform:rotate(-4deg);
+  }
+  .note p{
+    margin:0;
+    font-family:'Caveat', cursive;
+    font-size:21px;
+    line-height:1.35;
+    color:#3a2c10;
+  }
+  .note .pin{
+    position:absolute;
+    top:-9px; left:50%;
+    transform:translateX(-50%);
+    width:12px; height:12px;
+    background:var(--marker-orange);
+    border-radius:50%;
+    box-shadow:0 2px 3px rgba(0,0,0,.25);
+  }
+
+  footer{
+    margin-top:30px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .signature{
+    font-family:'Caveat', cursive;
+    font-size:30px;
+    color:var(--pencil-blue);
+    transform:rotate(-2deg);
+  }
+  .stamp{
+    font-family:'Space Mono', monospace;
+    font-size:10px;
+    letter-spacing:.1em;
+    color:var(--ink-soft);
+    border:1.5px solid var(--ink-soft);
+    border-radius:50%;
+    width:52px; height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    transform:rotate(8deg);
+    opacity:.7;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .page{animation:none; opacity:1; transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="binder">
+  <div class="page">
+    <header>
+      <div class="eyebrow">Biodata Siswa</div>
+      <h1>Desta Wijaya <span class="highlight">Viransyah</span></h1>
+      <p class="subtitle">"suka gambar, suka lagu, suka mi ayam."</p>
+    </header>
+
+    <div class="layout">
+      <div class="frame-wrap">
+        <div class="frame">
+          <div class="tape"></div>
+          <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="90" r="86" fill="#efe8d6" stroke="#2c2620" stroke-width="2"/>
+            <path d="M55 120 C55 95 70 78 90 78 C110 78 125 95 125 120" stroke="#2c2620" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="90" cy="60" r="26" stroke="#2c2620" stroke-width="2" fill="#f6f1e4"/>
+            <path d="M66 55 Q90 32 114 55" stroke="#2c2620" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M40 100 Q60 60 90 62" stroke="#f0782e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.55"/>
+            <path d="M140 105 Q120 65 92 63" stroke="#4f6a9e" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.5"/>
+          </svg>
+        </div>
+        <p class="caption">sketsa asal-asalan, harap maklum</p>
+        <div class="stickers">
+          <span class="sticker">SMK</span>
+          <span class="sticker">AJIBARANG</span>
+          <span class="sticker">2026</span>
+        </div>
+      </div>
+
+      <div class="fields">
+        <div class="field">
+          <span class="label">Nama</span>
+          <span class="value">Desta Wijaya Viransyah</span>
+        </div>
+        <div class="field">
+          <span class="label">Sekolah</span>
+          <span class="value">SMK Ma'arif NU 1 Ajibarang</span>
+        </div>
+        <div class="field hobi">
+          <span class="label">Hobi</span>
+          <span class="value">
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 20l1.2-4.8L16.5 3.9a1.5 1.5 0 0 1 2.1 0l1.5 1.5a1.5 1.5 0 0 1 0 2.1L8.8 18.8 4 20z" stroke="#2c2620" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Menggambar
+            <span style="opacity:.4">·</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M9 18V5l11-2v13" stroke="#2c2620" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="#2c2620" stroke-width="1.6"/><circle cx="17" cy="16" r="3" stroke="#2c2620" stroke-width="1.6"/></svg>
+            Mendengarkan lagu
+          </span>
+        </div>
+        <div class="field">
+          <span class="label">Makanan favorit</span>
+          <span class="value">Mi ayam 🍜</span>
+        </div>
+        <div class="field">
+          <span class="label">Cita-cita</span>
+          <span class="value">Punya banyak uang, hehee...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <span class="pin"></span>
+      <p>note to self: gambar itu terus, dengerin lagu terus, jangan lupa makan mi ayam. sukses menyusul~</p>
+    </div>
+
+    <footer>
+      <span class="signature">— Desta</span>
+      <span class="stamp">ASLI<br>100%</span>
+    </footer>
+  </div>
+</div>
+
+</body>
+</html>
